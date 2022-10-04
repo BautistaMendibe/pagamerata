@@ -12,3 +12,11 @@ h1{
   font-weight: bold;
   text-align: center
 }
+
+input{
+  background-color: white;
+  text-align: center;
+  height: 80px;
+  font-weight: normal;
+  color: #999999;
+}
