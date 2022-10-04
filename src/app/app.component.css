@@ -1,5 +1,14 @@
 body{
   background-color: #FAFAFA;
+  padding-right: 60px;
+  padding-left: 60px;
 }
 
+.navbar-brand{
+  font-size: x-large;
+}
 
+h1{
+  font-weight: bold;
+  text-align: center
+}
