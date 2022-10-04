@@ -5,12 +5,12 @@ body{
 .navbar-brand{
   padding-left: 60px;
   padding-right: 60px;
-  font-family: Gabriola;
+  font-family: "Gabriola", "serif";
   font-size: 30px;
 }
 
 h1{
-  font-family: Gabriola;
+  font-family: "Gabriola", "serif";
   text-align: center;
   font-weight: bold;
   font-size: 3em;
