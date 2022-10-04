@@ -2,6 +2,8 @@ body{
   background-color: #FAFAFA;
   padding-right: 60px;
   padding-left: 60px;
+  height: 100%;
+  width: 100%;
 }
 
 .navbar-brand{
