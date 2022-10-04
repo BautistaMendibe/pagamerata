@@ -9,7 +9,6 @@ import {RouterModule, Routes} from "@angular/router";
 
 const appRoutes:Routes = [
   {path:'', component:HomeComponentComponent},
-  {path:'cuantopusieron', component:CuantoPusoComponentComponent},
   {path:'repartir', component:RepartirComponentComponent},
 ];
 
