@@ -1,5 +1,29 @@
+<!-- Agregar participantes -->
+<!--
+<div class="input-group mb-3">
+  <input class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="Nombre">
+  <input type="number" class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="¿Cuánto puso?">
+  <div class="input-group-append text-center">
+    <button class="btn btn-dark btn-circle btn-xl m-lg-4" type="button"><span class="h4 fw-bold">+</span></button>
+  </div>
+</div>
+-->
+
 <div class="row">
-  <div class="col-4 justify-content-center" *ngFor="let participante of participantesArray; let index = index">
+  <div class="col-md-6" style="background-color: red">
+    Column
+  </div>
+  <div class="col-md-4" style="background-color: yellow">
+    Column
+  </div>
+  <div class="col-md-2" style="background-color: blue">
+    Column
+  </div>
+</div>
+
+<!-- Participantes agregados -->
+<div class="row">
+  <div class="col-md-4 justify-content-center" *ngFor="let participante of participantesArray; let index = index">
     <div class="m-lg-3 shadow p-3 mb-5 bg-white rounded text-center">
       <span class="h3 fw-bold">{{participante.nombre}}</span>
       <br>
