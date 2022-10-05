@@ -8,6 +8,13 @@ import { Participante } from "../models/participante";
 })
 export class CuantoPusoComponentComponent{
 
-
+  participantesArray : Participante[] = [
+    {id: 1, nombre: "Bauti", cantidad:100},
+    {id: 2, nombre: "Juan", cantidad:1000},
+    {id: 3, nombre: "Claudio", cantidad:1000},
+    {id: 4, nombre: "San Migel de Astirias", cantidad:1000},
+    {id: 5, nombre: "Claudia", cantidad:1000},
+    {id: 6, nombre: "Vero", cantidad:1000},
+  ];
 
 }
