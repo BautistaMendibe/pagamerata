@@ -1,23 +1,13 @@
-<!-- Agregar participantes -->
-<!--
-<div class="input-group mb-3">
-  <input class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="Nombre">
-  <input type="number" class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="¿Cuánto puso?">
-  <div class="input-group-append text-center">
-    <button class="btn btn-dark btn-circle btn-xl m-lg-4" type="button"><span class="h4 fw-bold">+</span></button>
-  </div>
-</div>
--->
-
+<!-- Agregar participantes FORM -->
 <div class="row">
   <div class="col-md-6">
-    <input class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="Nombre">
+    <input [(ngModel)]="participanteSeleccionado.nombre" type="text" class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="Nombre">
   </div>
   <div class="col-md-4">
-    <input type="number" class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="¿Cuánto puso?">
+    <input [(ngModel)]="participanteSeleccionado.cantidad" type="number" class="form-control border-0 shadow p-3 mb-5 bg-white rounded m-1" style="font-size: 2rem" placeholder="¿Cuánto puso?">
   </div>
   <div class="col-md-2 text-center mb-4">
-    <button class="btn btn-dark btn-circle btn-xl m-lg-4" type="button"><span class="h4 fw-bold">+</span></button>
+    <button (click)="agregarEditarParticipante()" class="btn btn-dark btn-circle btn-xl m-lg-3" type="button"><span class="h4 fw-bold">+</span></button>
   </div>
 </div>
 

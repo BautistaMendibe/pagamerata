@@ -17,4 +17,13 @@ export class CuantoPusoComponentComponent{
     {id: 6, nombre: "Vero", cantidad:1000},
   ];
 
+  participanteSeleccionado:Participante = new Participante();
+
+  agregarEditarParticipante(){
+    this.participanteSeleccionado.id = this.participantesArray.length + 1;
+    this.participantesArray.push(this.participanteSeleccionado);
+
+    this.participanteSeleccionado = new Participante();
+  }
+
 }

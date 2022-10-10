@@ -6,6 +6,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { CuantoPusoComponentComponent } from './cuanto-puso-component/cuanto-puso-component.component';
 import { RepartirComponentComponent } from './repartir-component/repartir-component.component';
 import {RouterModule, Routes} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 
 const appRoutes:Routes = [
   {path:'', component:HomeComponentComponent},
@@ -19,10 +20,11 @@ const appRoutes:Routes = [
     CuantoPusoComponentComponent,
     RepartirComponentComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
