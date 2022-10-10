@@ -6,3 +6,12 @@
   font-size: 15px;
   text-align: center;
 }
+
+a{
+  margin-left: 20px;
+  padding: 10px;
+}
+
+a:hover{
+  cursor: pointer;
+}

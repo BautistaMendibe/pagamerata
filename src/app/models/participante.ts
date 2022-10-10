@@ -1,5 +1,5 @@
 export class Participante {
-  id: number;
+  id: number = 0;
   nombre: string;
   cantidad: number;
 }

@@ -8,22 +8,30 @@ import { Participante } from "../models/participante";
 })
 export class CuantoPusoComponentComponent{
 
-  participantesArray : Participante[] = [
-    {id: 1, nombre: "Bauti", cantidad:100},
-    {id: 2, nombre: "Juan", cantidad:1000},
-    {id: 3, nombre: "Claudio", cantidad:1000},
-    {id: 4, nombre: "San Migel de Astirias", cantidad:1000},
-    {id: 5, nombre: "Claudia", cantidad:1000},
-    {id: 6, nombre: "Vero", cantidad:1000},
-  ];
+  participantesArray : Participante[] = [];
 
   participanteSeleccionado:Participante = new Participante();
 
   agregarEditarParticipante(){
-    this.participanteSeleccionado.id = this.participantesArray.length + 1;
-    this.participantesArray.push(this.participanteSeleccionado);
+
+    // Si el id=0 no hay ningún empleado seleccionado y se quiere agregar uno
+    if(this.participanteSeleccionado.id === 0){
+      this.participanteSeleccionado.id = this.participantesArray.length + 1;
+      this.participantesArray.push(this.participanteSeleccionado);
+    }
 
     this.participanteSeleccionado = new Participante();
   }
 
+  abrirParaEditar(participante: Participante){
+    this.participanteSeleccionado = participante;
+  }
+
+  eliminarParticipante(participante:Participante){
+    if(confirm("Estás seguro que quieres eliminarlo/a?")){
+      this.participantesArray = this.participantesArray.filter(x => x != participante);
+      this.participanteSeleccionado = new Participante();
+    }
+
+  }
 }
