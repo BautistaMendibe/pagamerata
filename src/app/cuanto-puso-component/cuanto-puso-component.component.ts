@@ -14,6 +14,11 @@ export class CuantoPusoComponentComponent{
 
   agregarEditarParticipante(){
 
+    // Ver qué onda esto por qué no funciona
+    //if(this.participanteSeleccionado.nombre === null || this.participanteSeleccionado.cantidad === null){
+    //  alert("Debe agregar todos los campos")
+    //}
+
     // Si el id=0 no hay ningún empleado seleccionado y se quiere agregar uno
     if(this.participanteSeleccionado.id === 0){
       this.participanteSeleccionado.id = this.participantesArray.length + 1;

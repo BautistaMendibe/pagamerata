@@ -12,9 +12,9 @@ input{
 }
 
 a{
-  color: black;
+  color: grey;
 }
 
 a:hover{
-  color: #353535;
+  color: #212529;
 }
