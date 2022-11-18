@@ -10,11 +10,3 @@ input{
   font-weight: normal;
   color: #999999;
 }
-
-a{
-  color: grey;
-}
-
-a:hover{
-  color: #212529;
-}

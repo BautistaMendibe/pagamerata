@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Participante} from "../models/participante";
 
 @Component({
   selector: 'app-repartir-component',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repartir-component.component.css']
 })
 export class RepartirComponentComponent implements OnInit {
+
+  @Input() participantes: Participante[];
 
   constructor() { }
 

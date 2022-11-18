@@ -10,8 +10,10 @@
 a{
   margin-left: 20px;
   padding: 10px;
+  color: grey;
 }
 
 a:hover{
   cursor: pointer;
+  color: #212529;
 }
