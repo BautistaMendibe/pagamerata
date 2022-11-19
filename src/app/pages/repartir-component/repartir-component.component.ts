@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Participante} from "../models/participante";
+import {Participante} from "../../models/participante";
 
 @Component({
   selector: 'app-repartir-component',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Participante } from "../models/participante";
+import { Participante } from "../../models/participante";
 
 @Component({
   selector: 'app-cuanto-puso-component',
