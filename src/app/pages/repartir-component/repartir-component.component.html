@@ -1,1 +1,6 @@
-<p>repartir-component works!</p>
+<ul>
+  <li *ngFor="let participante of dataService.participantes">
+    {{participante.nombre}}
+    {{participante.cantidad}}
+  </li>
+</ul>

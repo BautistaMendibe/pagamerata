@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Participante} from "../../models/participante";
+import {Component, OnInit} from '@angular/core';
+import {DataService} from "../../components/services/data.service";
 
 @Component({
   selector: 'app-repartir-component',
@@ -8,9 +8,7 @@ import {Participante} from "../../models/participante";
 })
 export class RepartirComponentComponent implements OnInit {
 
-  @Input() participantes: Participante[];
-
-  constructor() { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
   }

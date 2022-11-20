@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Participante } from "../../models/participante";
+import {DataService} from "../services/data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cuanto-puso-component',
@@ -7,6 +9,9 @@ import { Participante } from "../../models/participante";
   styleUrls: ['./cuanto-puso-component.component.css']
 })
 export class CuantoPusoComponentComponent{
+
+  constructor(private dataService: DataService, private router: Router) {
+  }
 
   participantesArray : Participante[] = [];
 
@@ -41,6 +46,10 @@ export class CuantoPusoComponentComponent{
       this.participantesArray = this.participantesArray.filter(x => x != participante);
       this.participanteSeleccionado = new Participante();
     }
+  }
 
+  enviarParticipantes(){
+    this.dataService.participantes = this.participantesArray;
+    this.router.navigate(["/repartir"])
   }
 }
