@@ -49,7 +49,11 @@ export class CuantoPusoComponentComponent{
   }
 
   enviarParticipantes(){
-    this.dataService.participantes = this.participantesArray;
-    this.router.navigate(["/repartir"])
+    if(this.participantesArray.length < 2){
+      alert("Debe agregar al menos 2 participantes.");
+    } else {
+      this.dataService.participantes = this.participantesArray;
+      this.router.navigate(["/repartir"]);
+    }
   }
 }
