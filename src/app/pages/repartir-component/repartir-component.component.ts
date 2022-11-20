@@ -8,9 +8,22 @@ import {DataService} from "../../components/services/data.service";
 })
 export class RepartirComponentComponent implements OnInit {
 
+  private total: number;
+
   constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
+    this.total = this.calcularTotal();
+  }
+
+  calcularTotal(): number{
+    let subTotal = 0;
+
+    this.dataService.participantes.forEach( function (p) {
+      subTotal += p.cantidad;
+    });
+
+    return subTotal;
   }
 
 }
