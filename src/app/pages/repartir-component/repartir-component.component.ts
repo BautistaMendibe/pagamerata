@@ -8,7 +8,7 @@ import {DataService} from "../../components/services/data.service";
 })
 export class RepartirComponentComponent implements OnInit {
 
-  private total: number;
+  public total: number;
 
   constructor(public dataService: DataService) { }
 
