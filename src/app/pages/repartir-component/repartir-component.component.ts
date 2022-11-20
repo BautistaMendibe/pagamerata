@@ -17,7 +17,7 @@ export class RepartirComponentComponent implements OnInit {
   ngOnInit(): void {
     this.total = this.calcularTotal();
     this.cantidadCadaUno = this.calcularCantidadCadaUno(this.total, this.cantidadParticipantes);
-    console.log(this.cantidadParticipantes);
+    console.log(this.cantidadCadaUno);
   }
 
   calcularTotal(): number{
@@ -30,12 +30,11 @@ export class RepartirComponentComponent implements OnInit {
     });
 
     this.cantidadParticipantes = cantidadParticipantes;
-
     return subTotal;
   }
 
   calcularCantidadCadaUno(total: number, cantidadParticipantes: number): number{
-    return 1;
+    return Math.round(total/cantidadParticipantes);
   }
 
 }
