@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from "../../components/services/data.service";
 import {Participante} from "../../models/participante";
+import {Transaccion} from "../../models/transaccion";
 
 @Component({
   selector: 'app-repartir-component',
@@ -14,6 +15,7 @@ export class RepartirComponentComponent implements OnInit {
   private cantidadCadaUno: number;
   private noPusieron: Participante[] = [];
   private siPusieron: Participante[] = [];
+  public transacciones: Transaccion[] = [];
 
   constructor(public dataService: DataService) { }
 
@@ -21,7 +23,7 @@ export class RepartirComponentComponent implements OnInit {
     this.total = this.calcularTotal();
     this.cantidadCadaUno = this.calcularCantidadCadaUno(this.total, this.cantidadParticipantes);
     this.separarParticipantesSegunCantidad(this.cantidadCadaUno, this.siPusieron, this.noPusieron);
-
+    this.repartir(this.transacciones, this.siPusieron, this.noPusieron, this.cantidadCadaUno);
   }
 
   calcularTotal(): number{
@@ -52,6 +54,21 @@ export class RepartirComponentComponent implements OnInit {
     });
   }
 
+  repartir(transacciones: Transaccion[], siPusieron: Participante[], noPusieron: Participante[], cantidadCadaUno: number){
+    noPusieron.forEach(function (noPlatudo){
+      noPlatudo.cantidad = cantidadCadaUno - noPlatudo.cantidad;
+      siPusieron.forEach(function (platudo){
+        if(platudo.cantidad != 0){
+          let devolver = platudo.cantidad - cantidadCadaUno;
+          noPlatudo.cantidad = devolver - noPlatudo.cantidad;
+          let cantidadDevuelta = devolver - noPlatudo.cantidad;
+          platudo.cantidad -= cantidadDevuelta;
+          let transaccion: Transaccion = new Transaccion(noPlatudo, platudo, cantidadDevuelta);
+          transacciones.push(transaccion);
+        }
+      })
+    })
+  }
 
 
 }
