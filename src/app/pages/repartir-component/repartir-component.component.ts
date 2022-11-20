@@ -40,7 +40,8 @@ export class RepartirComponentComponent implements OnInit {
   }
 
   calcularCantidadCadaUno(total: number, cantidadParticipantes: number): number{
-    return Math.round(total/cantidadParticipantes);
+    var cadaUno:number = total/cantidadParticipantes;
+    return Number(cadaUno.toFixed(2));
   }
 
   separarParticipantesSegunCantidad(cantidadCadaUno: number, siPusieron: Participante[], noPusieron: Participante[]){
