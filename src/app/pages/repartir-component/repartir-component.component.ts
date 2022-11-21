@@ -12,7 +12,7 @@ export class RepartirComponentComponent implements OnInit {
 
   public total: number;
   private cantidadParticipantes: number;
-  private cantidadCadaUno: number;
+  public cantidadCadaUno: number;
   private noPusieron: Participante[] = [];
   private siPusieron: Participante[] = [];
   public transacciones: Transaccion[] = [];
@@ -63,7 +63,7 @@ export class RepartirComponentComponent implements OnInit {
           let cantidadDevuelta: number = noPuso.neto*(-1);
           siPuso.neto = siPuso.neto + noPuso.neto;
           noPuso.neto = 0;
-          let transaccion: Transaccion = new Transaccion(noPuso, siPuso, cantidadDevuelta);
+          let transaccion: Transaccion = new Transaccion(noPuso, siPuso, Number(cantidadDevuelta.toFixed(2)));
           transacciones.push(transaccion);
         } else {
           if(siPuso.neto == 0){
@@ -72,7 +72,7 @@ export class RepartirComponentComponent implements OnInit {
             let cantidadDevuelta: number = siPuso.neto;
             noPuso.neto = siPuso.neto + noPuso.neto;
             siPuso.neto = 0;
-            let transaccion: Transaccion = new Transaccion(noPuso, siPuso, cantidadDevuelta);
+            let transaccion: Transaccion = new Transaccion(noPuso, siPuso, Number(cantidadDevuelta.toFixed(2)));
             transacciones.push(transaccion);
           }
         }
