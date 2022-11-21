@@ -23,7 +23,7 @@ export class RepartirComponentComponent implements OnInit {
     this.total = this.calcularTotal();
     this.cantidadCadaUno = this.calcularCantidadCadaUno(this.total, this.cantidadParticipantes);
     this.separarParticipantesSegunCantidad(this.cantidadCadaUno, this.siPusieron, this.noPusieron);
-    this.repartir(this.transacciones, this.siPusieron, this.noPusieron, this.cantidadCadaUno);
+    this.repartir(this.transacciones, this.siPusieron, this.noPusieron);
   }
 
   calcularTotal(): number{
@@ -40,14 +40,15 @@ export class RepartirComponentComponent implements OnInit {
   }
 
   calcularCantidadCadaUno(total: number, cantidadParticipantes: number): number{
-    var cadaUno:number = total/cantidadParticipantes;
+    let cadaUno:number = total/cantidadParticipantes;
     return Number(cadaUno.toFixed(2));
   }
 
   separarParticipantesSegunCantidad(cantidadCadaUno: number, siPusieron: Participante[], noPusieron: Participante[]){
     // Separamos a los participantes que pusieron más que la cantidad que cada uno tiene que poner de los que no
     this.dataService.participantes.forEach( function (p) {
-      if(p.cantidad > cantidadCadaUno){
+      p.neto = p.cantidad - cantidadCadaUno;
+      if( p.neto >= 0){
         siPusieron.push(p);
       } else {
         noPusieron.push(p);
@@ -55,21 +56,27 @@ export class RepartirComponentComponent implements OnInit {
     });
   }
 
-  repartir(transacciones: Transaccion[], siPusieron: Participante[], noPusieron: Participante[], cantidadCadaUno: number){
-    noPusieron.forEach(function (noPlatudo){
-      noPlatudo.cantidad = cantidadCadaUno - noPlatudo.cantidad;
-      siPusieron.forEach(function (platudo){
-        if(platudo.cantidad != 0){
-          let devolver = platudo.cantidad - cantidadCadaUno;
-          noPlatudo.cantidad = devolver - noPlatudo.cantidad;
-          let cantidadDevuelta = devolver - noPlatudo.cantidad;
-          platudo.cantidad -= cantidadDevuelta;
-          let transaccion: Transaccion = new Transaccion(noPlatudo, platudo, cantidadDevuelta);
+  repartir(transacciones: Transaccion[], siPusieron: Participante[], noPusieron: Participante[]){
+    noPusieron.forEach((function (noPuso){
+      siPusieron.forEach((function (siPuso) {
+        if(siPuso.neto > noPuso.neto*(-1)){
+          let cantidadDevuelta: number = noPuso.neto*(-1);
+          siPuso.neto = siPuso.neto + noPuso.neto;
+          noPuso.neto = 0;
+          let transaccion: Transaccion = new Transaccion(noPuso, siPuso, cantidadDevuelta);
           transacciones.push(transaccion);
+        } else {
+          if(siPuso.neto == 0){
+            return;
+          } else {
+            let cantidadDevuelta: number = siPuso.neto;
+            noPuso.neto = siPuso.neto + noPuso.neto;
+            siPuso.neto = 0;
+            let transaccion: Transaccion = new Transaccion(noPuso, siPuso, cantidadDevuelta);
+            transacciones.push(transaccion);
+          }
         }
-      })
-    })
+      }))
+    }))
   }
-
-
 }
