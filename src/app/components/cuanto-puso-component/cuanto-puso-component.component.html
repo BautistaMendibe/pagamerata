@@ -22,7 +22,7 @@
     <div class="m-lg-3 shadow p-3 mb-5 bg-white rounded" (click)="abrirParaEditar(participante)">
       <div class="row">
         <div class="col-9">
-          <span class="h3 fw-bold">{{participante.nombre}}</span>
+          <span class="h4 fw-bold">{{participante.nombre}}</span>
         </div>
         <div class="col-3 text-danger">
           <a (click)="eliminarParticipante(participante)">
@@ -34,7 +34,7 @@
         </div>
       </div>
       <br>
-      <span class="h2 text-center">${{participante.cantidad}}</span>
+      <span class="h3 text-center">${{participante.cantidad}}</span>
     </div>
   </div>
 </div>
