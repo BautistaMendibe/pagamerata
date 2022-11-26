@@ -1,3 +1,15 @@
 .navbar-brand{
-  font-size: x-large;
+  font-size: 20px;
+}
+
+@media(max-width: 425px){
+  .navbar-brand{
+    font-size: 15px;
+  }
+}
+
+@media(max-width: 320px){
+  .navbar-brand{
+    font-size: 11px;
+  }
 }
