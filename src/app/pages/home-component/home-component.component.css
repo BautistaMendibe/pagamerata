@@ -10,3 +10,13 @@ input{
   font-weight: normal;
   color: #999999;
 }
+
+@media (max-width: 400px) {
+  #titulo{
+    font-size: x-large;
+  }
+
+  #subTitulo{
+    font-size: x-large;
+  }
+}

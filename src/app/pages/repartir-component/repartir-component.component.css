@@ -5,3 +5,42 @@ h1{
 span{
   font-weight: bold;
 }
+
+p{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#flecha{
+  width: 30px;
+}
+
+@media(max-width: 500px){
+
+  #flecha{
+    width: 15px;
+  }
+
+  #textoTotalGastado{
+    font-size: 22px;
+  }
+
+  #textoCadaUno{
+    font-size: 22px;
+  }
+
+  #textoARepartir{
+    font-size: 20px;
+  }
+
+  p{
+    font-size: 15px;
+  }
+
+}
+
+@media(max-width: 350px){
+  p{
+    font-size: 9px;
+  }
+}
