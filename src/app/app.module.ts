@@ -8,6 +8,7 @@ import { RepartirComponentComponent } from './pages/repartir-component/repartir-
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { NavbarComponentComponent } from './components/navbar-component/navbar-component.component';
+import { FooterComponentComponent } from './components/footer-component/footer-component.component';
 
 const appRoutes:Routes = [
   {path:'', component:HomeComponentComponent},
@@ -20,7 +21,8 @@ const appRoutes:Routes = [
     HomeComponentComponent,
     CuantoPusoComponentComponent,
     RepartirComponentComponent,
-    NavbarComponentComponent
+    NavbarComponentComponent,
+    FooterComponentComponent
   ],
     imports: [
         BrowserModule,

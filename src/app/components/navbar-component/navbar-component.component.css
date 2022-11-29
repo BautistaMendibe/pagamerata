@@ -1,5 +1,10 @@
 .navbar-brand{
-  font-size: 20px;
+  font-size: 23px;
+}
+
+hr{
+  color:lightslategrey;
+  margin: 0;
 }
 
 @media(max-width: 425px){

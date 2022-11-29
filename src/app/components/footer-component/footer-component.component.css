@@ -1,0 +1,9 @@
+#textoFooter{
+  color:grey;
+}
+
+@media (max-width: 500px) {
+  #textoFooter{
+    font-size: 11px;
+  }
+}
